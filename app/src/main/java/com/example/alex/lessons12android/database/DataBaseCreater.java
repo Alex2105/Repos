@@ -10,15 +10,15 @@ public class DataBaseCreater extends SQLiteOpenHelper {
     public static final String DB_NAME = "db_name";
     public static final int DB_VERSION = 1;
 
-    public static class User implements BaseColumns {
+    public static class UserColumns implements BaseColumns {
         public static final String TABLE_NAME = "users";
         public static final String NAME = "name";
     }
 
-    private static String CREATE_TABLE_USER = "CREATE TABLE " + User.TABLE_NAME + "(" + User._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            User.NAME + " TEXT" + ");";
+    private static String CREATE_TABLE_USER = "CREATE TABLE " + UserColumns.TABLE_NAME + "(" + UserColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            UserColumns.NAME + " TEXT" + ");";
 
-    public DataBaseCreater(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public DataBaseCreater(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
